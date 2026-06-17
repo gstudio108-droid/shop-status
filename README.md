@@ -1,2 +1,3 @@
-# shop-status
-Live shop status
+# GITANJALI STUDIO
+
+🟢 OPEN NOW
