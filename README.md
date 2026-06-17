@@ -1,16 +1,18 @@
 # 🏪 GITANJALI STUDIO
 
-# 🟢 LIVE SHOP STATUS
+# 🟢 CURRENT SHOP STATUS
 
 ## 🟢 OPEN NOW
 
+📢 **Before visiting, please check today's live updates below.**
+
 ---
 
-## 📢 TODAY'S LIVE UPDATE
+## 📢 TODAY'S LIVE UPDATES
 
-✅ Annapurna Form Fill-up Going On
+✅ Annapurna Form Fill-up in Progress
 
-✅ PM-KISAN e-KYC Working
+✅ PM-KISAN e-KYC Available
 
 ---
 
@@ -24,13 +26,13 @@
 
 ## 📍 LOCATION
 
-**Kalagachia Bus Stand, Khejuri, Purba Medinipur**
+Kalagachia Bus Stand, Khejuri, Purba Medinipur
 
 ---
 
 ## 💬 WHATSAPP
 
-**8158990252**
+📱 8158990252
 
 https://wa.me/918158990252
 
@@ -42,4 +44,4 @@ https://share.google/dRiQYsiEzH2WK8xYW
 
 ---
 
-_Last Updated: 18 June 2026-
+🕒 **Last Updated:** 18 June 2026
