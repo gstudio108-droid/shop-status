@@ -2,136 +2,99 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GITANJALI STUDIO - Live Shop Status</title>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GITANJALI STUDIO | Live Service Status</title>
 <style>
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#f2f2f2;
-}
-
-.container{
-max-width:700px;
-margin:20px auto;
-background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-
-h1{
-text-align:center;
-color:#003366;
-}
-
-.status{
-background:#dc3545;
-color:white;
-padding:18px;
-font-size:32px;
-font-weight:bold;
-text-align:center;
-border-radius:12px;
-margin:20px 0;
-}
-
-.section{
-margin-top:25px;
-}
-
-.section h2{
-background:#003366;
-color:white;
-padding:10px;
-border-radius:8px;
-}
-
-.button{
-display:block;
-text-align:center;
-padding:15px;
-margin-top:12px;
-border-radius:10px;
-font-size:20px;
-font-weight:bold;
-text-decoration:none;
-color:white;
-}
-
-.whatsapp{
-background:#25D366;
-}
-
-.google{
-background:#4285F4;
-}
-
-.footer{
-margin-top:25px;
-text-align:center;
-color:#777;
-font-size:14px;
-}
+:root{--green:#28a745;--red:#dc3545;--blue:#0b5394;--bg:#f2f4f7}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--bg)}
+.wrap{max-width:720px;margin:20px auto;padding:16px}
+.card{background:#fff;border-radius:16px;padding:20px;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+h1{text-align:center;color:var(--blue);margin:0}
+.sub{text-align:center;color:#666;margin:6px 0 18px}
+.status{padding:18px;border-radius:12px;text-align:center;color:#fff;font-size:32px;font-weight:bold}
+.section{margin-top:18px}
+.section h2{margin:0 0 10px;background:var(--blue);color:#fff;padding:10px;border-radius:8px;font-size:20px}
+ul{margin:0;padding-left:22px}
+li{margin:8px 0}
+.btn{display:block;text-align:center;text-decoration:none;color:#fff;font-weight:bold;padding:14px;border-radius:10px;margin-top:10px}
+.wa{background:#25D366}.call{background:#444}.google{background:#4285F4}
+.small{text-align:center;color:#777;margin-top:16px;font-size:13px}
 </style>
-
 </head>
-
 <body>
 
-<div class="container">
+<!-- ========= EDIT ONLY THIS SECTION ========= -->
 
+<script>
+const SHOP_STATUS="OPEN"; // OPEN or CLOSED
+
+const UPDATE1="✅ Annapurna Form Fill-up Going On";
+const UPDATE2="✅ PM-KISAN e-KYC Working";
+const UPDATE3="";
+
+const MORNING="10:30 AM – 12:30 PM";
+const EVENING="5:00 PM – 9:30 PM";
+
+const WHATSAPP="8158990252";
+const GOOGLE="https://share.google/dRiQYsiEzH2WK8xYW";
+const MAPS="https://maps.google.com/?q=Kalagachia+Bus+Stand+Khejuri";
+</script>
+
+<!-- ======= DO NOT EDIT BELOW ======= -->
+
+<div class="wrap">
+<div class="card">
 <h1>🏪 GITANJALI STUDIO</h1>
+<div class="sub">Live Service Status</div>
 
-<div class="status">
-🔴 CLOSED NOW
-</div>
-
-<p align="center">
-Please check today's updates before visiting.
-</p>
+<div id="statusBox" class="status"></div>
 
 <div class="section">
-<h2>📢 Today's Live Updates</h2>
-
-<p>✅ Annapurna Form Fill-up in Progress</p>
-
-<p>✅ PM-KISAN e-KYC Available</p>
-
+<h2>📢 Today's Updates</h2>
+<ul id="updates"></ul>
 </div>
 
 <div class="section">
 <h2>🕒 Shop Timings</h2>
-
-<p>🌞 Morning : <b>10:30 AM – 12:30 PM</b></p>
-
-<p>🌆 Evening : <b>5:00 PM – 9:30 PM</b></p>
-
+<p>🌞 Morning: <b id="m"></b></p>
+<p>🌆 Evening: <b id="e"></b></p>
 </div>
 
 <div class="section">
 <h2>📍 Location</h2>
-
 <p>Kalagachia Bus Stand, Khejuri, Purba Medinipur</p>
-
 </div>
 
-<a class="button whatsapp" href="https://wa.me/918158990252">
-💬 Chat on WhatsApp
-</a>
+<a class="btn wa" id="wa">💬 WhatsApp</a>
+<a class="btn call" href="tel:+918158990252">📞 Call Now</a>
+<a class="btn google" id="gb">⭐ Google Business</a>
+<a class="btn google" id="maps">📍 Google Maps</a>
 
-<a class="button google" href="https://share.google/dRiQYsiEzH2WK8xYW">
-⭐ Google Business
-</a>
-
-<div class="footer">
-
-Last Updated : 18 June 2026
-
+<div class="small" id="updated"></div>
+</div>
 </div>
 
-</div>
+<script>
+const s=document.getElementById("statusBox");
+if(SHOP_STATUS==="OPEN"){
+ s.style.background="var(--green)";
+ s.innerHTML="🟢 OPEN NOW";
+}else{
+ s.style.background="var(--red)";
+ s.innerHTML="🔴 CLOSED NOW";
+}
+const list=document.getElementById("updates");
+[UPDATE1,UPDATE2,UPDATE3].filter(x=>x.trim()).forEach(t=>{
+ const li=document.createElement("li");li.textContent=t;list.appendChild(li);
+});
+document.getElementById("m").textContent=MORNING;
+document.getElementById("e").textContent=EVENING;
+document.getElementById("wa").href="https://wa.me/91"+WHATSAPP;
+document.getElementById("gb").href=GOOGLE;
+document.getElementById("maps").href=MAPS;
+const d=new Date();
+document.getElementById("updated").textContent="Last Updated: "+d.toLocaleString();
+</script>
 
 </body>
 </html>
